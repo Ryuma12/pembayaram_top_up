@@ -32,7 +32,7 @@ public class TransactionController {
         return transactionService.getHistoryTransaction(request, page, size);
     }
 
-    GetMapping("/balance")
+    @GetMapping("/balance")
     public Map getBalance(HttpServletRequest request){
         return transactionService.getBalance(request);
     }
