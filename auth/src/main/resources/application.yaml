@@ -1,0 +1,42 @@
+server:
+  port: 2002
+  use-forward-headers: false
+  session:
+    cookie:
+      name: authsession
+  error:
+    include-stacktrace: never
+
+spring:
+  application:
+    name: auth-service
+    version: 1.0.0
+  jpa:
+    database: POSTGRESQL
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://127.0.0.1:5433/auth?sslmode=disable
+    username: postgres
+    password: Ramadhan12
+    driverClassName: org.postgresql.Driver
+  devtools:
+    livereload:
+      port: 35731
+  jackson:
+    serialization:
+      write-dates-as-timestamps: true
+
+security:
+  basic:
+    enabled: false
+
+logging:
+  level:
+    org.apache: ERROR
+    org.springframework: ERROR
+    com.netflix: ERROR
+    org.hibernate: ERROR
+    com.zaxxer.hikari: ERROR
